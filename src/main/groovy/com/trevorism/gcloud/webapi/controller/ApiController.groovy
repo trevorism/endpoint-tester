@@ -60,6 +60,7 @@ class ApiController {
     @ApiOperation(value = "Creation")
     @POST
     @Path("/nospec")
+    @Consumes(MediaType.TEXT_PLAIN)
     def create(def data){
         data
     }
@@ -86,6 +87,7 @@ class ApiController {
     @ApiOperation(value = "Update")
     @PUT
     @Path("/nospec")
+    @Consumes(MediaType.TEXT_PLAIN)
     def update(def data){
         data
     }
