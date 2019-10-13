@@ -75,7 +75,7 @@ appengine {
         projectId = "trevorism-gcloud"
         stopPreviousVersion = true
         promote = true
-        version = "1"
+        version = "0.0.1"
     }
 }
 
