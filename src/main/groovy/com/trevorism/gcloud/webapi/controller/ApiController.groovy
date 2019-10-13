@@ -35,6 +35,7 @@ class ApiController {
     @ApiOperation(value = "A response")
     @GET
     @Path("/nospec")
+    @Produces(MediaType.TEXT_PLAIN)
     String getNotSpecifiedMediaType(){
         "hello"
     }
@@ -61,6 +62,7 @@ class ApiController {
     @POST
     @Path("/nospec")
     @Consumes(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.TEXT_PLAIN)
     def create(def data){
         data
     }
@@ -88,6 +90,7 @@ class ApiController {
     @PUT
     @Path("/nospec")
     @Consumes(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.TEXT_PLAIN)
     def update(def data){
         data
     }
@@ -111,6 +114,7 @@ class ApiController {
     @ApiOperation(value = "delete")
     @DELETE
     @Path("/nospec")
+    @Produces(MediaType.TEXT_PLAIN)
     String deleteNotSpecifiedMediaType(){
         "delete"
     }

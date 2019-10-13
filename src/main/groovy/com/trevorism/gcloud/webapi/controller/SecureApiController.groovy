@@ -23,7 +23,7 @@ class SecureApiController {
     @Path("/json")
     @Produces(MediaType.APPLICATION_JSON)
     String getJson(){
-        "hello json"
+        "secure hello json"
     }
 
     @ApiOperation(value = "XML response")
@@ -32,15 +32,16 @@ class SecureApiController {
     @Path("/xml")
     @Produces(MediaType.TEXT_XML)
     String getXml(){
-        "hello xml"
+        "secure hello xml"
     }
 
     @ApiOperation(value = "A response")
     @GET
     @Secure
     @Path("/nospec")
+    @Consumes(MediaType.TEXT_PLAIN)
     String getNotSpecifiedMediaType(){
-        "hello"
+        "secure hello"
     }
 
     @ApiOperation(value = "Json creation")
@@ -67,6 +68,8 @@ class SecureApiController {
     @POST
     @Secure
     @Path("/nospec")
+    @Consumes(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.TEXT_PLAIN)
     def create(def data){
         data
     }
@@ -96,6 +99,8 @@ class SecureApiController {
     @PUT
     @Secure
     @Path("/nospec")
+    @Consumes(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.TEXT_PLAIN)
     def update(def data){
         data
     }
@@ -106,7 +111,7 @@ class SecureApiController {
     @Path("/json")
     @Produces(MediaType.APPLICATION_JSON)
     String deleteJson(){
-        "delete json"
+        "secure delete json"
     }
 
     @ApiOperation(value = "XML delete")
@@ -115,14 +120,15 @@ class SecureApiController {
     @Path("/xml")
     @Produces(MediaType.TEXT_XML)
     String deleteXml(){
-        "delete xml"
+        "secure delete xml"
     }
 
     @ApiOperation(value = "delete")
     @DELETE
     @Secure
     @Path("/nospec")
+    @Produces(MediaType.TEXT_PLAIN)
     String deleteNotSpecifiedMediaType(){
-        "delete"
+        "secure delete"
     }
 }
