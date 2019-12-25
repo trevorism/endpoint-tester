@@ -22,7 +22,7 @@ class SecureApiController {
     @Secure
     @Path("/json")
     @Produces(MediaType.APPLICATION_JSON)
-    String getJson(){
+    String getJson() {
         "secure hello json"
     }
 
@@ -31,7 +31,7 @@ class SecureApiController {
     @Secure
     @Path("/xml")
     @Produces(MediaType.TEXT_XML)
-    String getXml(){
+    String getXml() {
         "secure hello xml"
     }
 
@@ -40,7 +40,7 @@ class SecureApiController {
     @Secure
     @Path("/nospec")
     @Consumes(MediaType.TEXT_PLAIN)
-    String getNotSpecifiedMediaType(){
+    String getNotSpecifiedMediaType() {
         "secure hello"
     }
 
@@ -50,7 +50,7 @@ class SecureApiController {
     @Path("/json")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    def createJson(def json){
+    def createJson(def json) {
         json
     }
 
@@ -60,7 +60,7 @@ class SecureApiController {
     @Path("/xml")
     @Produces(MediaType.TEXT_XML)
     @Consumes(MediaType.TEXT_XML)
-    def createXml(def xml){
+    def createXml(def xml) {
         xml
     }
 
@@ -70,7 +70,7 @@ class SecureApiController {
     @Path("/nospec")
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
-    def create(def data){
+    def create(def data) {
         data
     }
 
@@ -81,7 +81,7 @@ class SecureApiController {
     @Path("/json")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    def updateJson(def json){
+    def updateJson(def json) {
         json
     }
 
@@ -91,7 +91,7 @@ class SecureApiController {
     @Path("/xml")
     @Produces(MediaType.TEXT_XML)
     @Consumes(MediaType.TEXT_XML)
-    def updateXml(def xml){
+    def updateXml(def xml) {
         xml
     }
 
@@ -101,7 +101,7 @@ class SecureApiController {
     @Path("/nospec")
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
-    def update(def data){
+    def update(def data) {
         data
     }
 
@@ -110,7 +110,7 @@ class SecureApiController {
     @Secure
     @Path("/json")
     @Produces(MediaType.APPLICATION_JSON)
-    String deleteJson(){
+    String deleteJson() {
         "secure delete json"
     }
 
@@ -119,7 +119,7 @@ class SecureApiController {
     @Secure
     @Path("/xml")
     @Produces(MediaType.TEXT_XML)
-    String deleteXml(){
+    String deleteXml() {
         "secure delete xml"
     }
 
@@ -128,7 +128,7 @@ class SecureApiController {
     @Secure
     @Path("/nospec")
     @Produces(MediaType.TEXT_PLAIN)
-    String deleteNotSpecifiedMediaType(){
+    String deleteNotSpecifiedMediaType() {
         "secure delete"
     }
 }

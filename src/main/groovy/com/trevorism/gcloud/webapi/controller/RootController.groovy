@@ -34,14 +34,14 @@ class RootController {
 
     @ApiOperation(value = "Context root of the application")
     @GET
-    String displayHelpLink(){
+    String displayHelpLink() {
         '<h1>API</h1><br/>Visit the help page at <a href="/help">/help'
     }
 
     @ApiOperation(value = "Shows this help page")
     @GET
     @Path("help")
-    Response help(){
+    Response help() {
         Response.temporaryRedirect(new URI("/swagger/index.html")).build()
     }
 }

@@ -20,7 +20,7 @@ class ApiController {
     @GET
     @Path("/json")
     @Produces(MediaType.APPLICATION_JSON)
-    String getJson(){
+    String getJson() {
         "hello json"
     }
 
@@ -28,7 +28,7 @@ class ApiController {
     @GET
     @Path("/xml")
     @Produces(MediaType.TEXT_XML)
-    String getXml(){
+    String getXml() {
         "hello xml"
     }
 
@@ -36,7 +36,7 @@ class ApiController {
     @GET
     @Path("/nospec")
     @Produces(MediaType.TEXT_PLAIN)
-    String getNotSpecifiedMediaType(){
+    String getNotSpecifiedMediaType() {
         "hello"
     }
 
@@ -45,7 +45,7 @@ class ApiController {
     @Path("/json")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    def createJson(def json){
+    def createJson(def json) {
         json
     }
 
@@ -54,7 +54,7 @@ class ApiController {
     @Path("/xml")
     @Produces(MediaType.TEXT_XML)
     @Consumes(MediaType.TEXT_XML)
-    def createXml(def xml){
+    def createXml(def xml) {
         xml
     }
 
@@ -63,7 +63,7 @@ class ApiController {
     @Path("/nospec")
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
-    def create(def data){
+    def create(def data) {
         data
     }
 
@@ -73,7 +73,7 @@ class ApiController {
     @Path("/json")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    def updateJson(def json){
+    def updateJson(def json) {
         json
     }
 
@@ -82,7 +82,7 @@ class ApiController {
     @Path("/xml")
     @Produces(MediaType.TEXT_XML)
     @Consumes(MediaType.TEXT_XML)
-    def updateXml(def xml){
+    def updateXml(def xml) {
         xml
     }
 
@@ -91,7 +91,7 @@ class ApiController {
     @Path("/nospec")
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
-    def update(def data){
+    def update(def data) {
         data
     }
 
@@ -99,7 +99,7 @@ class ApiController {
     @DELETE
     @Path("/json")
     @Produces(MediaType.APPLICATION_JSON)
-    String deleteJson(){
+    String deleteJson() {
         "delete json"
     }
 
@@ -107,7 +107,7 @@ class ApiController {
     @DELETE
     @Path("/xml")
     @Produces(MediaType.TEXT_XML)
-    String deleteXml(){
+    String deleteXml() {
         "delete xml"
     }
 
@@ -115,7 +115,7 @@ class ApiController {
     @DELETE
     @Path("/nospec")
     @Produces(MediaType.TEXT_PLAIN)
-    String deleteNotSpecifiedMediaType(){
+    String deleteNotSpecifiedMediaType() {
         "delete"
     }
 }
