@@ -7,13 +7,16 @@ package com.trevorism.gcloud
 this.metaClass.mixin(cucumber.api.groovy.Hooks)
 this.metaClass.mixin(cucumber.api.groovy.EN)
 
+def contextRootContent
+def pingContent
+
 Given(/the endpoint-tester application is alive/) {  ->
     try{
-        new URL("http://endpoint-tester.endpoint-tester.trevorism.com/ping").text
+        new URL("http://endpoint-tester.testing.trevorism.com/ping").text
     }
     catch (Exception ignored){
         Thread.sleep(10000)
-        new URL("http://endpoint-tester.endpoint-tester.trevorism.com/ping").text
+        new URL("http://endpoint-tester.testing.trevorism.com/ping").text
     }
 }
 
