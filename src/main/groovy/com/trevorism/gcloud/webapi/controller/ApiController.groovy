@@ -11,16 +11,20 @@ import javax.ws.rs.PUT
 import javax.ws.rs.Path
 import javax.ws.rs.Produces
 import javax.ws.rs.core.MediaType
+import java.util.logging.Logger
 
 @Api("API Operations")
 @Path("/api")
 class ApiController {
+
+    private static final Logger log = Logger.getLogger(ApiController.class.name)
 
     @ApiOperation(value = "Json response")
     @GET
     @Path("/json")
     @Produces(MediaType.APPLICATION_JSON)
     String getJson() {
+        log.info("In getJson")
         "hello json"
     }
 
@@ -29,6 +33,7 @@ class ApiController {
     @Path("/xml")
     @Produces(MediaType.TEXT_XML)
     String getXml() {
+        log.info("In getXml")
         "hello xml"
     }
 
@@ -37,6 +42,7 @@ class ApiController {
     @Path("/nospec")
     @Produces(MediaType.TEXT_PLAIN)
     String getNotSpecifiedMediaType() {
+        log.info("In getNotSpecifiedMediaType")
         "hello"
     }
 
@@ -46,6 +52,7 @@ class ApiController {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     def createJson(def json) {
+        log.info("In createJson: ${json}")
         json
     }
 
@@ -55,6 +62,7 @@ class ApiController {
     @Produces(MediaType.TEXT_XML)
     @Consumes(MediaType.TEXT_XML)
     def createXml(def xml) {
+        log.info("In createXml: ${xml}")
         xml
     }
 
@@ -64,6 +72,7 @@ class ApiController {
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
     def create(def data) {
+        log.info("In create: ${data}")
         data
     }
 
@@ -74,6 +83,7 @@ class ApiController {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     def updateJson(def json) {
+        log.info("In updateJson: ${json}")
         json
     }
 
@@ -83,6 +93,7 @@ class ApiController {
     @Produces(MediaType.TEXT_XML)
     @Consumes(MediaType.TEXT_XML)
     def updateXml(def xml) {
+        log.info("In updateXml: ${xml}")
         xml
     }
 
@@ -92,6 +103,7 @@ class ApiController {
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
     def update(def data) {
+        log.info("In update: ${data}")
         data
     }
 
@@ -100,6 +112,7 @@ class ApiController {
     @Path("/json")
     @Produces(MediaType.APPLICATION_JSON)
     String deleteJson() {
+        log.info("In deleteJson")
         "delete json"
     }
 
@@ -108,6 +121,7 @@ class ApiController {
     @Path("/xml")
     @Produces(MediaType.TEXT_XML)
     String deleteXml() {
+        log.info("In deleteXml")
         "delete xml"
     }
 
@@ -116,6 +130,7 @@ class ApiController {
     @Path("/nospec")
     @Produces(MediaType.TEXT_PLAIN)
     String deleteNotSpecifiedMediaType() {
+        log.info("In deleteNotSpecifiedMediaType")
         "delete"
     }
 }
