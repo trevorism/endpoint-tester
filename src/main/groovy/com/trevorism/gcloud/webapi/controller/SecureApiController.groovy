@@ -1,5 +1,6 @@
 package com.trevorism.gcloud.webapi.controller
 
+import com.trevorism.secure.Roles
 import com.trevorism.secure.Secure
 import io.swagger.annotations.Api
 import io.swagger.annotations.ApiOperation
@@ -19,7 +20,7 @@ class SecureApiController {
 
     @ApiOperation(value = "Json response")
     @GET
-    @Secure
+    @Secure(Roles.USER)
     @Path("/json")
     @Produces(MediaType.APPLICATION_JSON)
     String getJson() {
@@ -28,7 +29,7 @@ class SecureApiController {
 
     @ApiOperation(value = "XML response")
     @GET
-    @Secure
+    @Secure(Roles.USER)
     @Path("/xml")
     @Produces(MediaType.TEXT_XML)
     String getXml() {
@@ -37,7 +38,7 @@ class SecureApiController {
 
     @ApiOperation(value = "A response")
     @GET
-    @Secure
+    @Secure(Roles.USER)
     @Path("/nospec")
     @Consumes(MediaType.TEXT_PLAIN)
     String getNotSpecifiedMediaType() {
@@ -46,7 +47,7 @@ class SecureApiController {
 
     @ApiOperation(value = "Json creation")
     @POST
-    @Secure
+    @Secure(Roles.USER)
     @Path("/json")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
@@ -56,7 +57,7 @@ class SecureApiController {
 
     @ApiOperation(value = "XML creation")
     @POST
-    @Secure
+    @Secure(Roles.USER)
     @Path("/xml")
     @Produces(MediaType.TEXT_XML)
     @Consumes(MediaType.TEXT_XML)
@@ -66,7 +67,7 @@ class SecureApiController {
 
     @ApiOperation(value = "Creation")
     @POST
-    @Secure
+    @Secure(Roles.USER)
     @Path("/nospec")
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
@@ -77,7 +78,7 @@ class SecureApiController {
 
     @ApiOperation(value = "Json update")
     @PUT
-    @Secure
+    @Secure(Roles.USER)
     @Path("/json")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
@@ -87,7 +88,7 @@ class SecureApiController {
 
     @ApiOperation(value = "XML update")
     @PUT
-    @Secure
+    @Secure(Roles.USER)
     @Path("/xml")
     @Produces(MediaType.TEXT_XML)
     @Consumes(MediaType.TEXT_XML)
@@ -97,7 +98,7 @@ class SecureApiController {
 
     @ApiOperation(value = "Update")
     @PUT
-    @Secure
+    @Secure(Roles.USER)
     @Path("/nospec")
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
@@ -107,7 +108,7 @@ class SecureApiController {
 
     @ApiOperation(value = "Json delete")
     @DELETE
-    @Secure
+    @Secure(Roles.USER)
     @Path("/json")
     @Produces(MediaType.APPLICATION_JSON)
     String deleteJson() {
@@ -116,7 +117,7 @@ class SecureApiController {
 
     @ApiOperation(value = "XML delete")
     @DELETE
-    @Secure
+    @Secure(Roles.USER)
     @Path("/xml")
     @Produces(MediaType.TEXT_XML)
     String deleteXml() {
@@ -125,7 +126,7 @@ class SecureApiController {
 
     @ApiOperation(value = "delete")
     @DELETE
-    @Secure
+    @Secure(Roles.USER)
     @Path("/nospec")
     @Produces(MediaType.TEXT_PLAIN)
     String deleteNotSpecifiedMediaType() {
