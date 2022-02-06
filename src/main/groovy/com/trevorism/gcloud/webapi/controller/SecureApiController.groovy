@@ -132,4 +132,13 @@ class SecureApiController {
     String deleteNotSpecifiedMediaType() {
         "secure delete"
     }
+
+    @ApiOperation(value = "Internal")
+    @GET
+    @Secure(value = Roles.USER, allowInternal = true)
+    @Path("/internal")
+    @Produces(MediaType.APPLICATION_JSON)
+    def getInternal() {
+        "secure internal"
+    }
 }

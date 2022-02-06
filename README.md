@@ -6,6 +6,8 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/trevorism/endpoint-tester)
 ![GitHub top language](https://img.shields.io/github/languages/top/trevorism/endpoint-tester)
 
+Latest version: 0.2.0
+
 Web App that exposes some endpoints for testing trevorism commands.
 
-Deployed to http://endpoint-tester.testing.trevorism.com/ping
+Deployed to https://endpoint-tester.testing.trevorism.com
