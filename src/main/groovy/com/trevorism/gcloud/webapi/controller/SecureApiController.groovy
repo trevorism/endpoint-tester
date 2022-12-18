@@ -75,7 +75,6 @@ class SecureApiController {
         data
     }
 
-
     @ApiOperation(value = "Json update")
     @PUT
     @Secure(Roles.USER)
