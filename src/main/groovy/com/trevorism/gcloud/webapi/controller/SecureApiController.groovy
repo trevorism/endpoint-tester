@@ -2,141 +2,115 @@ package com.trevorism.gcloud.webapi.controller
 
 import com.trevorism.secure.Roles
 import com.trevorism.secure.Secure
-import io.swagger.annotations.Api
-import io.swagger.annotations.ApiOperation
+import io.micronaut.http.MediaType
+import io.micronaut.http.annotation.*
+import io.swagger.v3.oas.annotations.Operation
+import io.swagger.v3.oas.annotations.tags.Tag
 
-import javax.ws.rs.Consumes
-import javax.ws.rs.DELETE
-import javax.ws.rs.GET
-import javax.ws.rs.POST
-import javax.ws.rs.PUT
-import javax.ws.rs.Path
-import javax.ws.rs.Produces
-import javax.ws.rs.core.MediaType
 
-@Api("Secure API Operations")
-@Path("/secure")
+@Controller("/secure")
 class SecureApiController {
 
-    @ApiOperation(value = "Json response")
-    @GET
+    @Tag(name = "Secure Endpoint Operations")
+    @Operation(summary = "Json response")
+    @Get(value = "json", produces = io.micronaut.http.MediaType.APPLICATION_JSON)
     @Secure(Roles.USER)
-    @Path("/json")
-    @Produces(MediaType.APPLICATION_JSON)
     String getJson() {
         "secure hello json"
     }
 
-    @ApiOperation(value = "XML response")
-    @GET
+    @Tag(name = "Secure Endpoint Operations")
+    @Operation(summary = "XML response")
+    @Get(value = "xml", produces = MediaType.TEXT_XML)
     @Secure(Roles.USER)
-    @Path("/xml")
-    @Produces(MediaType.TEXT_XML)
     String getXml() {
         "secure hello xml"
     }
 
-    @ApiOperation(value = "A response")
-    @GET
+    @Tag(name = "Secure Endpoint Operations")
+    @Operation(summary = "A response")
+    @Get(value = "nospec", produces = MediaType.TEXT_PLAIN)
     @Secure(Roles.USER)
-    @Path("/nospec")
-    @Consumes(MediaType.TEXT_PLAIN)
     String getNotSpecifiedMediaType() {
         "secure hello"
     }
 
-    @ApiOperation(value = "Json creation")
-    @POST
+    @Tag(name = "Secure Endpoint Operations")
+    @Operation(summary = "Json creation")
+    @Post(value = "json", produces = MediaType.APPLICATION_JSON, consumes = MediaType.APPLICATION_JSON)
     @Secure(Roles.USER)
-    @Path("/json")
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
-    def createJson(def json) {
+    def createJson(@Body def json) {
         json
     }
 
-    @ApiOperation(value = "XML creation")
-    @POST
+    @Tag(name = "Secure Endpoint Operations")
+    @Operation(summary = "XML creation")
+    @Post(value = "xml", produces = MediaType.TEXT_XML, consumes = MediaType.TEXT_XML)
     @Secure(Roles.USER)
-    @Path("/xml")
-    @Produces(MediaType.TEXT_XML)
-    @Consumes(MediaType.TEXT_XML)
-    def createXml(def xml) {
+    def createXml(@Body def xml) {
         xml
     }
 
-    @ApiOperation(value = "Creation")
-    @POST
+    @Tag(name = "Secure Endpoint Operations")
+    @Operation(summary = "Creation")
+    @Post(value = "nospec", produces = MediaType.TEXT_PLAIN, consumes = MediaType.TEXT_PLAIN)
     @Secure(Roles.USER)
-    @Path("/nospec")
-    @Consumes(MediaType.TEXT_PLAIN)
-    @Produces(MediaType.TEXT_PLAIN)
-    def create(def data) {
+    def create(@Body def data) {
         data
     }
 
-    @ApiOperation(value = "Json update")
-    @PUT
+    @Tag(name = "Secure Endpoint Operations")
+    @Operation(summary = "Json update")
+    @Put(value = "json", produces = MediaType.APPLICATION_JSON, consumes = MediaType.APPLICATION_JSON)
     @Secure(Roles.USER)
-    @Path("/json")
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
-    def updateJson(def json) {
+    def updateJson(@Body def json) {
         json
     }
 
-    @ApiOperation(value = "XML update")
-    @PUT
+    @Tag(name = "Secure Endpoint Operations")
+    @Operation(summary = "XML update")
+    @Put(value = "xml", produces = MediaType.TEXT_XML, consumes = MediaType.TEXT_XML)
     @Secure(Roles.USER)
-    @Path("/xml")
-    @Produces(MediaType.TEXT_XML)
-    @Consumes(MediaType.TEXT_XML)
-    def updateXml(def xml) {
+    def updateXml(@Body def xml) {
         xml
     }
 
-    @ApiOperation(value = "Update")
-    @PUT
+    @Tag(name = "Secure Endpoint Operations")
+    @Operation(summary = "Update")
     @Secure(Roles.USER)
-    @Path("/nospec")
-    @Consumes(MediaType.TEXT_PLAIN)
-    @Produces(MediaType.TEXT_PLAIN)
-    def update(def data) {
+    @Put(value = "nospec", produces = MediaType.TEXT_PLAIN, consumes = MediaType.TEXT_PLAIN)
+    def update(@Body def data) {
         data
     }
 
-    @ApiOperation(value = "Json delete")
-    @DELETE
+    @Tag(name = "Secure Endpoint Operations")
+    @Operation(summary = "Json delete")
+    @Delete(value = "json", produces = MediaType.APPLICATION_JSON)
     @Secure(Roles.USER)
-    @Path("/json")
-    @Produces(MediaType.APPLICATION_JSON)
     String deleteJson() {
         "secure delete json"
     }
 
-    @ApiOperation(value = "XML delete")
-    @DELETE
+    @Tag(name = "Secure Endpoint Operations")
+    @Operation(summary = "XML delete")
+    @Delete(value = "xml", produces = MediaType.TEXT_XML)
     @Secure(Roles.USER)
-    @Path("/xml")
-    @Produces(MediaType.TEXT_XML)
     String deleteXml() {
         "secure delete xml"
     }
 
-    @ApiOperation(value = "delete")
-    @DELETE
+    @Tag(name = "Secure Endpoint Operations")
+    @Operation(summary = "delete")
+    @Delete(value = "nospec", produces = MediaType.TEXT_PLAIN)
     @Secure(Roles.USER)
-    @Path("/nospec")
-    @Produces(MediaType.TEXT_PLAIN)
     String deleteNotSpecifiedMediaType() {
         "secure delete"
     }
 
-    @ApiOperation(value = "Internal")
-    @GET
+    @Tag(name = "Secure Endpoint Operations")
+    @Operation(summary = "Internal")
+    @Get(value = "internal", produces = MediaType.APPLICATION_JSON)
     @Secure(value = Roles.USER, allowInternal = true)
-    @Path("/internal")
-    @Produces(MediaType.APPLICATION_JSON)
     def getInternal() {
         "secure internal"
     }

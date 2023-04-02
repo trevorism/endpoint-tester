@@ -1,3 +1,7 @@
+# 0.4.0
+
+Upgrade to micronaut, java 17
+
 # 0.3.0
 
 Upgrade to work with github actions

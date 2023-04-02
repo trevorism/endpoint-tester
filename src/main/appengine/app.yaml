@@ -1,0 +1,3 @@
+runtime: java17
+service: endpoint-tester
+entrypoint: java -jar endpoint-tester-all.jar

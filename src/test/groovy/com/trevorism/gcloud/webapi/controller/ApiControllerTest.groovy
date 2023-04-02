@@ -1,6 +1,6 @@
 package com.trevorism.gcloud.webapi.controller
 
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 class ApiControllerTest {
     private ApiController controller = new ApiController()
