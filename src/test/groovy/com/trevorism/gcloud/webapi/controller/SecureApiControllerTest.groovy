@@ -8,12 +8,12 @@ class SecureApiControllerTest {
 
     @Test
     void testGetJson() {
-        assert "secure hello json" == controller.getJson()
+        assert "{\"secure\": \"hello json\"}" == controller.getJson()
     }
 
     @Test
     void testGetXml() {
-        assert "secure hello xml" == controller.getXml()
+        assert "<hello> secure </hello>" == controller.getXml()
     }
 
     @Test
@@ -53,16 +53,21 @@ class SecureApiControllerTest {
 
     @Test
     void testDeleteJson() {
-        assert "secure delete json" == controller.deleteJson()
+        assert "{\"secure\": \"delete json\"}" == controller.deleteJson()
     }
 
     @Test
     void testDeleteXml() {
-        assert "secure delete xml" == controller.deleteXml()
+        assert "<delete> secure </delete>" == controller.deleteXml()
     }
 
     @Test
     void testDeleteNotSpecifiedMediaType() {
         assert "secure delete" == controller.deleteNotSpecifiedMediaType()
+    }
+
+    @Test
+    void testGetInternal() {
+        assert "{\"secure\": \"internal\"}" == controller.getInternal()
     }
 }

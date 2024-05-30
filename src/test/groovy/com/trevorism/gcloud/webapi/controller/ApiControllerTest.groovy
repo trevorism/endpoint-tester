@@ -7,12 +7,12 @@ class ApiControllerTest {
 
     @Test
     void testGetJson() {
-        assert "hello json" == controller.getJson()
+        assert "{\"hello\": \"json\"}" == controller.getJson()
     }
 
     @Test
     void testGetXml() {
-        assert "hello xml" == controller.getXml()
+        assert "<hello> xml </hello>" == controller.getXml()
     }
 
     @Test
@@ -52,12 +52,12 @@ class ApiControllerTest {
 
     @Test
     void testDeleteJson() {
-        assert "delete json" == controller.deleteJson()
+        assert "{\"delete\": \"json\"}" == controller.deleteJson()
     }
 
     @Test
     void testDeleteXml() {
-        assert "delete xml" == controller.deleteXml()
+        assert "<delete> xml </delete>" == controller.deleteXml()
     }
 
     @Test
