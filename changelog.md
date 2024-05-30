@@ -1,3 +1,7 @@
+# 0.5.0
+
+Upgrade dependencies and add test/deploy events
+
 # 0.4.0
 
 Upgrade to micronaut, java 17

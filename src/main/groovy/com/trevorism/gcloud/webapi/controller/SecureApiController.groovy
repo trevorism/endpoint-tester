@@ -13,10 +13,10 @@ class SecureApiController {
 
     @Tag(name = "Secure Endpoint Operations")
     @Operation(summary = "Json response")
-    @Get(value = "json", produces = io.micronaut.http.MediaType.APPLICATION_JSON)
+    @Get(value = "json", produces = MediaType.APPLICATION_JSON)
     @Secure(Roles.USER)
     String getJson() {
-        "secure hello json"
+        "{\"secure\": \"hello json\"}"
     }
 
     @Tag(name = "Secure Endpoint Operations")
@@ -24,7 +24,7 @@ class SecureApiController {
     @Get(value = "xml", produces = MediaType.TEXT_XML)
     @Secure(Roles.USER)
     String getXml() {
-        "secure hello xml"
+        "<hello> secure </hello>"
     }
 
     @Tag(name = "Secure Endpoint Operations")
@@ -88,7 +88,7 @@ class SecureApiController {
     @Delete(value = "json", produces = MediaType.APPLICATION_JSON)
     @Secure(Roles.USER)
     String deleteJson() {
-        "secure delete json"
+        "{\"secure\": \"delete json\"}"
     }
 
     @Tag(name = "Secure Endpoint Operations")
@@ -96,7 +96,7 @@ class SecureApiController {
     @Delete(value = "xml", produces = MediaType.TEXT_XML)
     @Secure(Roles.USER)
     String deleteXml() {
-        "secure delete xml"
+        "<delete> secure </delete>"
     }
 
     @Tag(name = "Secure Endpoint Operations")
@@ -112,6 +112,6 @@ class SecureApiController {
     @Get(value = "internal", produces = MediaType.APPLICATION_JSON)
     @Secure(value = Roles.USER, allowInternal = true)
     def getInternal() {
-        "secure internal"
+        "{\"secure\": \"internal\"}"
     }
 }

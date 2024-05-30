@@ -18,7 +18,7 @@ class ApiController {
     @Get(value = "json", produces = MediaType.APPLICATION_JSON)
     String getJson() {
         log.info("In getJson")
-        "hello json"
+        "{\"hello\": \"json\"}"
     }
 
     @Tag(name = "Endpoint Operations")
@@ -26,7 +26,7 @@ class ApiController {
     @Get(value = "xml", produces = MediaType.TEXT_XML)
     String getXml() {
         log.info("In getXml")
-        "hello xml"
+        "<hello> xml </hello>"
     }
 
     @Tag(name = "Endpoint Operations")
@@ -90,7 +90,7 @@ class ApiController {
     @Delete(value = "json", produces = MediaType.APPLICATION_JSON)
     String deleteJson() {
         log.info("In deleteJson")
-        "delete json"
+        "{\"delete\": \"json\"}"
     }
 
     @Tag(name = "Endpoint Operations")
@@ -98,7 +98,7 @@ class ApiController {
     @Delete(value = "xml", produces = MediaType.TEXT_XML)
     String deleteXml() {
         log.info("In deleteXml")
-        "delete xml"
+        "<delete> xml </delete>"
     }
 
     @Tag(name = "Endpoint Operations")

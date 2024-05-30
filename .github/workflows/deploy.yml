@@ -13,20 +13,14 @@ jobs:
 
   call-deploy:
     uses: trevorism/actions-workflows/.github/workflows/deploy.yml@master
-    if: success() || failure()
-    needs: [call-build, call-accept-before]
+    needs: [call-build]
     with:
       JDK_VERSION: 17
       gcp_project: 'trevorism-testing'
       gcp_project_id: '729203316942'
-      version: '0-4-0'
+      version: '0-5-0'
     secrets:
       SIGNING_KEY: ${{ secrets.SIGNING_KEY }}
-
-  call-accept-before:
-    uses: trevorism/actions-workflows/.github/workflows/accept.yml@master
-    with:
-      JDK_VERSION: 17
 
   call-accept-after:
     uses: trevorism/actions-workflows/.github/workflows/accept.yml@master
