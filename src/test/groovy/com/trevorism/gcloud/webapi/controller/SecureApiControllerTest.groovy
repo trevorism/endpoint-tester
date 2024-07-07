@@ -66,8 +66,4 @@ class SecureApiControllerTest {
         assert "secure delete" == controller.deleteNotSpecifiedMediaType()
     }
 
-    @Test
-    void testGetInternal() {
-        assert "{\"secure\": \"internal\"}" == controller.getInternal()
-    }
 }

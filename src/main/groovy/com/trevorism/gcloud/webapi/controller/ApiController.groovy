@@ -14,7 +14,7 @@ class ApiController {
     private static final Logger log = LoggerFactory.getLogger(ApiController.class.name)
 
     @Tag(name = "Endpoint Operations")
-    @Operation(summary = "Json response")
+    @Operation(summary = "Json get")
     @Get(value = "json", produces = MediaType.APPLICATION_JSON)
     String getJson() {
         log.info("In getJson")
@@ -22,7 +22,7 @@ class ApiController {
     }
 
     @Tag(name = "Endpoint Operations")
-    @Operation(summary = "XML response")
+    @Operation(summary = "XML get")
     @Get(value = "xml", produces = MediaType.TEXT_XML)
     String getXml() {
         log.info("In getXml")
@@ -30,7 +30,7 @@ class ApiController {
     }
 
     @Tag(name = "Endpoint Operations")
-    @Operation(summary = "A response")
+    @Operation(summary = "Text get")
     @Get(value = "nospec", produces = MediaType.TEXT_PLAIN)
     String getNotSpecifiedMediaType() {
         log.info("In getNotSpecifiedMediaType")
@@ -54,7 +54,7 @@ class ApiController {
     }
 
     @Tag(name = "Endpoint Operations")
-    @Operation(summary = "Creation")
+    @Operation(summary = "Text creation")
     @Post(value = "nospec", produces = MediaType.TEXT_PLAIN, consumes = MediaType.TEXT_PLAIN)
     def create(@Body def data) {
         log.info("In create: ${data}")
@@ -78,7 +78,7 @@ class ApiController {
     }
 
     @Tag(name = "Endpoint Operations")
-    @Operation(summary = "Update")
+    @Operation(summary = "Text update")
     @Put(value = "nospec", produces = MediaType.TEXT_PLAIN, consumes = MediaType.TEXT_PLAIN)
     def update(@Body def data) {
         log.info("In update: ${data}")
@@ -102,7 +102,7 @@ class ApiController {
     }
 
     @Tag(name = "Endpoint Operations")
-    @Operation(summary = "delete")
+    @Operation(summary = "Text delete")
     @Delete(value = "nospec", produces = MediaType.TEXT_PLAIN)
     String deleteNotSpecifiedMediaType() {
         log.info("In deleteNotSpecifiedMediaType")

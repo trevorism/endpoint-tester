@@ -1,3 +1,7 @@
+# 0.6.0
+
+Add specific permission endpoints. Upgrade dependencies.
+
 # 0.5.0
 
 Upgrade dependencies and add test/deploy events

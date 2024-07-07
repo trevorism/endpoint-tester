@@ -12,7 +12,7 @@ import io.swagger.v3.oas.annotations.tags.Tag
 class SecureApiController {
 
     @Tag(name = "Secure Endpoint Operations")
-    @Operation(summary = "Json response")
+    @Operation(summary = "Json get")
     @Get(value = "json", produces = MediaType.APPLICATION_JSON)
     @Secure(Roles.USER)
     String getJson() {
@@ -20,7 +20,7 @@ class SecureApiController {
     }
 
     @Tag(name = "Secure Endpoint Operations")
-    @Operation(summary = "XML response")
+    @Operation(summary = "XML get")
     @Get(value = "xml", produces = MediaType.TEXT_XML)
     @Secure(Roles.USER)
     String getXml() {
@@ -28,7 +28,7 @@ class SecureApiController {
     }
 
     @Tag(name = "Secure Endpoint Operations")
-    @Operation(summary = "A response")
+    @Operation(summary = "Text get")
     @Get(value = "nospec", produces = MediaType.TEXT_PLAIN)
     @Secure(Roles.USER)
     String getNotSpecifiedMediaType() {
@@ -52,7 +52,7 @@ class SecureApiController {
     }
 
     @Tag(name = "Secure Endpoint Operations")
-    @Operation(summary = "Creation")
+    @Operation(summary = "Text creation")
     @Post(value = "nospec", produces = MediaType.TEXT_PLAIN, consumes = MediaType.TEXT_PLAIN)
     @Secure(Roles.USER)
     def create(@Body def data) {
@@ -76,7 +76,7 @@ class SecureApiController {
     }
 
     @Tag(name = "Secure Endpoint Operations")
-    @Operation(summary = "Update")
+    @Operation(summary = "Text update")
     @Secure(Roles.USER)
     @Put(value = "nospec", produces = MediaType.TEXT_PLAIN, consumes = MediaType.TEXT_PLAIN)
     def update(@Body def data) {
@@ -100,18 +100,11 @@ class SecureApiController {
     }
 
     @Tag(name = "Secure Endpoint Operations")
-    @Operation(summary = "delete")
+    @Operation(summary = "Text delete")
     @Delete(value = "nospec", produces = MediaType.TEXT_PLAIN)
     @Secure(Roles.USER)
     String deleteNotSpecifiedMediaType() {
         "secure delete"
     }
 
-    @Tag(name = "Secure Endpoint Operations")
-    @Operation(summary = "Internal")
-    @Get(value = "internal", produces = MediaType.APPLICATION_JSON)
-    @Secure(value = Roles.USER, allowInternal = true)
-    def getInternal() {
-        "{\"secure\": \"internal\"}"
-    }
 }
