@@ -53,7 +53,7 @@ class PermissionsApiControllerTest {
 
     @Test
     void testGetAny() {
-        assert "{\"secure\": \"any\"}" == controller.getAny()
+        assert "{\"secure\": \"any\"}" == controller.getEvery()
     }
 
 }

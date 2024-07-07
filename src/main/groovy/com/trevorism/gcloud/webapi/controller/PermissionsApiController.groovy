@@ -85,10 +85,10 @@ class PermissionsApiController {
     }
 
     @Tag(name = "Advanced Permissions Operations")
-    @Operation(summary = "Any permissions")
-    @Get(value = "any", produces = MediaType.APPLICATION_JSON)
+    @Operation(summary = "All permissions")
+    @Get(value = "every", produces = MediaType.APPLICATION_JSON)
     @Secure(value = Roles.USER, permissions = "CRUDE")
-    String getAny() {
+    String getEvery() {
         "{\"secure\": \"any\"}"
     }
 }
