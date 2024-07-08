@@ -3,6 +3,8 @@ micronaut:
     name: endpoint-tester
   server:
     http-to-https-redirect: true
+    cors:
+      enabled: true
   security:
     enabled: true
     redirect:
