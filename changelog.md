@@ -1,3 +1,7 @@
+# 0.7.0
+
+Add /test endpoint for web tests. Update dependencies.
+
 # 0.6.0
 
 Add specific permission endpoints. Upgrade dependencies.
