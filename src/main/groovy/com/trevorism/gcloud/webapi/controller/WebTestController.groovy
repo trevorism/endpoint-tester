@@ -9,7 +9,6 @@ import io.micronaut.http.MediaType
 import io.micronaut.http.annotation.Body
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Post
-import io.micronaut.http.annotation.Put
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.tags.Tag
 import org.slf4j.Logger
@@ -46,11 +45,11 @@ class WebTestController {
             }
         } catch (Exception e) {
             log.warn("Failed to run sample test", e)
-            return createTestResult(testSuite, false, 1, startTime)
         }
+        return createTestResult(testSuite, false, 1, startTime)
     }
 
-    TestResult createTestResult(TestSuite testSuite, boolean success, int numberOfTests, long startTime) {
+    private static TestResult createTestResult(TestSuite testSuite, boolean success, int numberOfTests, long startTime) {
         int duration = (int) (System.currentTimeMillis() - startTime)
         new TestResult([
                 service       : testSuite.source,
