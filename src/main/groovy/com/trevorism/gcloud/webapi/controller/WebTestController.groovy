@@ -7,6 +7,7 @@ import com.trevorism.secure.Roles
 import com.trevorism.secure.Secure
 import io.micronaut.http.MediaType
 import io.micronaut.http.annotation.Controller
+import io.micronaut.http.annotation.Post
 import io.micronaut.http.annotation.Put
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.tags.Tag
@@ -22,9 +23,9 @@ class WebTestController {
         this.secureHttpClient = secureHttpClient
     }
 
-    @Tag(name = "Secure Endpoint Operations")
-    @Operation(summary = "Json update")
-    @Put(value = "json", produces = MediaType.APPLICATION_JSON, consumes = MediaType.APPLICATION_JSON)
+    @Tag(name = "Test Endpoint Operations")
+    @Operation(summary = "Tests itself **Secure")
+    @Post(produces = MediaType.APPLICATION_JSON, consumes = MediaType.APPLICATION_JSON)
     @Secure(Roles.USER)
     TestResult webTest(TestSuite testSuite) {
         //Start a millisecond timer
