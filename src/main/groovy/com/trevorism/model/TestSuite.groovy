@@ -9,7 +9,6 @@ class TestSuite {
     String source
 
     boolean lastRunSuccess
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
     Date lastRunDate
     long lastRuntimeSeconds
 }

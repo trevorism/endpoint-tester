@@ -1,5 +1,6 @@
 package com.trevorism.gcloud.webapi.controller
 
+import com.google.gson.Gson
 import com.trevorism.https.SecureHttpClient
 import com.trevorism.model.TestResult
 import com.trevorism.model.TestSuite
@@ -29,5 +30,15 @@ class WebTestControllerTest {
         TestResult testResult = controller.webTest(new TestSuite(source: "endpoint-tester", "kind":"web"))
         assert testResult
         assert !testResult.success
+    }
+
+    @Test
+    void testTestResultSerialization(){
+        Gson gson = new Gson()
+        String json = gson.toJson(new TestResult())
+        assert json
+        assert json.contains("T")
+        assert json.contains("Z")
+
     }
 }

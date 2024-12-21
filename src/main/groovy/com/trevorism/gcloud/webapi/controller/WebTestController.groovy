@@ -57,8 +57,7 @@ class WebTestController {
                 kind          : testSuite.kind,
                 success       : success,
                 numberOfTests : numberOfTests,
-                durationMillis: duration,
-                date          : new Date()
+                durationMillis: duration
         ])
     }
 }
