@@ -1,3 +1,7 @@
+# 0.8.0
+
+Upgrade to Micronaut 5 and Java 25.
+
 # 0.7.0
 
 Add /test endpoint for web tests. Update dependencies.
@@ -25,4 +29,3 @@ Made secure endpoints https only.
 # 0.1.0
 
 Initial implementation
-
