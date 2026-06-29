@@ -42,7 +42,7 @@ class RootController {
     @Operation(summary = "Returns a personalized greeting")
     @ApiResponse(responseCode = "200")
     @Get(value = "/greeting", produces = MediaType.TEXT_PLAIN)
-    String greeting(@QueryValue(value = "name", required = false) Optional<String> name) {
+    String greeting(@QueryValue(value = "name") Optional<String> name) {
         def displayName = name.filter { it != null && !it.trim().isEmpty() }.orElse('World')
         "Hello, ${displayName}!"
     }
