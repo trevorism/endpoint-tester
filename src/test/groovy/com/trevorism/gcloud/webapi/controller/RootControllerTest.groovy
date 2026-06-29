@@ -17,4 +17,25 @@ class RootControllerTest {
         assert rootController.ping() == "pong"
     }
 
+    @Test
+    void testGreetingWithNamedParameter() {
+        RootController rootController = new RootController()
+        Optional<String> name = Optional.of("Micronaut")
+        assert rootController.greeting(name) == "Hello, Micronaut!"
+    }
+
+    @Test
+    void testGreetingWithBlankName() {
+        RootController rootController = new RootController()
+        Optional<String> name = Optional.of("")
+        assert rootController.greeting(name) == "Hello, World!"
+    }
+
+    @Test
+    void testGreetingWithMissingName() {
+        RootController rootController = new RootController()
+        Optional<String> name = Optional.empty()
+        assert rootController.greeting(name) == "Hello, World!"
+    }
+
 }
