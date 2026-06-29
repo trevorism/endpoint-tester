@@ -4,6 +4,7 @@ import io.micronaut.http.HttpResponse
 import io.micronaut.http.MediaType
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
+import io.micronaut.http.annotation.QueryValue
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.responses.ApiResponse
 import io.swagger.v3.oas.annotations.tags.Tag
@@ -26,7 +27,7 @@ class RootController {
     @Get(produces = MediaType.TEXT_HTML)
     HttpResponse<String> index() {
         log.info("Hit context root")
-        HttpResponse.ok(['<a href="/ping">/ping</a>', '<a href="/help">/help</a>'].toString())
+        HttpResponse.ok(['<a href="/ping">/ping</a>', '<a href="/help">/help</a>', '<a href="/greeting">/greeting</a>'].toString())
     }
 
     @Tag(name = "Root Operations")
@@ -35,5 +36,14 @@ class RootController {
     @Get(value = "/help")
     HttpResponse<String> help() {
         return HttpResponse.redirect(new URI("../swagger-ui/index.html"))
+    }
+
+    @Tag(name = "Root Operations")
+    @Operation(summary = "Returns a personalized greeting")
+    @ApiResponse(responseCode = "200")
+    @Get(value = "/greeting", produces = MediaType.TEXT_PLAIN)
+    String greeting(@QueryValue(value = "name") Optional<String> name) {
+        def displayName = name.filter { it != null && !it.trim().isEmpty() }.orElse('World')
+        "Hello, ${displayName}!"
     }
 }
