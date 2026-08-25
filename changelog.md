@@ -1,31 +1,35 @@
-# 0.8.0
+## 0.9.0
+
+Update to latest dependencies and fix issue with long running web test.
+
+## 0.8.0
 
 Upgrade to Micronaut 5 and Java 25.
 
-# 0.7.0
+## 0.7.0
 
 Add /test endpoint for web tests. Update dependencies.
 
-# 0.6.0
+## 0.6.0
 
 Add specific permission endpoints. Upgrade dependencies.
 
-# 0.5.0
+## 0.5.0
 
 Upgrade dependencies and add test/deploy events
 
-# 0.4.0
+## 0.4.0
 
 Upgrade to micronaut, java 17
 
-# 0.3.0
+## 0.3.0
 
 Upgrade to work with github actions
 
-# 0.2.0
+## 0.2.0
 
 Made secure endpoints https only.
 
-# 0.1.0
+## 0.1.0
 
 Initial implementation
